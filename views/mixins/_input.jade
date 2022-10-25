@@ -1,0 +1,9 @@
+mixin input(input)
+
+    p Select input(s)
+    select(id="input", onchange="inputHandler()", value=`${input}`)
+        option(value="null") None 
+        option(value="button") Button
+        option(value="switch") Switch  
+    button -
+    p(id='inputText')

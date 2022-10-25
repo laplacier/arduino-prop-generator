@@ -1,0 +1,6 @@
+mixin boardSelect(board)
+
+    .board_select
+        select(name="")
+            each microcontroller in board
+                option(value="microcontroller.id") #{microcontroller.name}

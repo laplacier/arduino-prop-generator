@@ -1,0 +1,9 @@
+extends layout
+include mixins/_board
+include mixins/_input
+include mixins/_output
+
+block content
+  p Generate an Arduino script for your project easy and fast!
+  form(action="/board")
+      button(type="submit") Get Started
