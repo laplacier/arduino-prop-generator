@@ -1,0 +1,63 @@
+-Ask for microcontroller
+	-Display info on select change
+	-Next button creates GET request with selected microcontroller
+-Ask for inputs/outputs
+	-During middleware before loading, pass selected microcontroller
+	-User greeted with drag and drop interface
+		-Left: Each unique selectable input/output, hover for information
+		-Right: Dropzone for chosen inputs/outputs
+		-Bottom-Right: Dropzone with trash icon for removing inputs
+		-Top: Information to assist user with input/output and pin selection
+	-Each time an input/output is dropped into dropzone, run required routines
+		-Error checking routine
+			-Input/output must be powerable/connectable to the microcontroller
+			-Microcontroller must have enough available pins
+			-Pass control to update view routine if checks are green
+		-Update view routine
+			-Warning when using pins shared with common hardware features
+			-Change available pins of each type
+	-Each time an input/output has its pins updated, run required routines
+		-Error checking routine
+			-Microcontroller pin must be available (disabled if pin is all buttons)
+			-Pass control to update view routine if checks are green
+		-Update view routine
+			-Warning when using pins shared with common hardware features
+			-Change available pins of each type
+	-Number of inputs can be 0 since inputs can be software, but number of outputs but be at least 1
+	-Next button creates GET request with selected board, inputs, and outputs
+-Logic time!
+	-During middleware before loading, pass selected microcontroller, inputs, and outputs
+	-Logical flow should start with the rightmost (outputs) and work left (inputs)
+	-For each output
+		-Choose the result(s) the output needs to produce
+		-Results can be given delays, loops, and other effects
+		-All outputs must be filled with result(s) before continuing. Outputs can be inputs for other outputs.
+	-For each result
+		-Choose what inputs are required to produce the output result.
+-(future)Ask to choose between human readable or fast/compressed code
+-(future)Allow direct upload through connected, supported microcontroller
+
+Microcontrollers:
+-Class structure
+	-id, string, used for webpage logic
+	-Name, string
+	-5V tolerant?, boolean
+	-Active HIGH?, boolean
+	-Number of Digital pins, int
+	-Number of Analog pins, int
+	-LED_BUILTIN, string
+	-I2C, [SCL,SDA]
+	-Hardware serial, [TX,RX]
+	-PWM, array
+Inputs:
+-Button
+	-Can be placed on pins together, infinite
+	-Boolean, analog allowed
+	-Allow RESET pin
+-Switch
+	-Aliases: Reed Switch, ...
+	-Limited by remaining pins
+	-Boolean, analog allowed
+-Potentiometer
+	-Limited by remaining pins
+	-Analog only
