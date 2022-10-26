@@ -1,9 +1,7 @@
 extends layout
 include mixins/_boardSelect
-include mixins/_boardInfo 
 
 block content
+  script(src='/javascripts/board.js')
   p Select a microcontroller
   +boardSelect(board)
-  +boardInfo(board.aUno)
-  

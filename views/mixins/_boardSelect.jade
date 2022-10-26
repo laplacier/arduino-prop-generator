@@ -1,6 +1,10 @@
 mixin boardSelect(board)
 
-    .board_select
-        select(name="")
-            each microcontroller in board
-                option(value="microcontroller.id") #{microcontroller.name}
+    .board_wrapper
+        each microcontroller in board
+            div(id=microcontroller.id, class='board_div')
+                p(id='board_name') #{microcontroller.name}
+                img(id='board_Img', src=`./images/${microcontroller.id}.svg`)
+                p(id='board_numDigPins') #{microcontroller.numDigPins} digital pins
+                p(id='board_numAnPins') #{microcontroller.numAnPins} analog pins
+                p(id='board_PWM') #{microcontroller.PWM.length} PWM pins
