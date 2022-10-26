@@ -21,14 +21,6 @@ router.get('/faq', function(req, res, next) {
 router.get('/board', controller.board);
 
 /* GET input/output page with middleware. (Step 2) */
-router.get('/input', (req, res, next) => {
-  // if no board is selected, return back to board select
-  if (req.params.board === null) res.render('/board')
-  // otherwise continue
-  else next()
-}, (req, res, next) => {
-  // choose inputs for board
-  res.render('input')
-})
+router.get('/io', controller.io);
 
 module.exports = router;

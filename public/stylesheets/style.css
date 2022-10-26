@@ -34,3 +34,10 @@ a {
 .board_div img {
   width: 10em;
 }
+
+.prevent-select {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}

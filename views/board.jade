@@ -3,5 +3,9 @@ include mixins/_boardSelect
 
 block content
   script(src='/javascripts/board.js')
-  p Select a microcontroller
+  p Click a microcontroller to select it
+  form(action="/io", method="GET")
+      p(id="selectedBoard") Nothing Selected!
+      input(id="boardID", type="hidden", name="boardId", value="0")
+      button(id="selectButton", type="submit", disabled) Select
   +boardSelect(board)

@@ -1,0 +1,9 @@
+mixin boardInfo(board)
+
+    .board_wrapper
+        script(src='/javascripts/board.js')
+        p = board.name
+        img(id='board_Img', src=`./images/${board.id}.svg`)
+        p(id='board_numDigPins') #{board.numDigPins} digital pins
+        p(id='board_numAnPins') #{board.numAnPins} analog pins
+        p(id='board_PWM') #{board.PWM.length} PWM pins
