@@ -4,4 +4,7 @@ include mixins/_ioSelect
 block content
     script(src='/javascripts/io.js')
     p Let's connect some stuff to your #{board.name}
+    p Inputs
     +ioSelect(input)
+    p Outputs
+    +ioSelect(output)

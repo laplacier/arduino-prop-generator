@@ -52,8 +52,10 @@ class Input_Custom extends Input {
     }
 }
 
-exports.button = new Input_Bool('button', 'Push Button', 'A button that does not stay pressed when pushed', 5, false);
-exports.button_t = new Input_Bool('button_t', 'Toggle Button', 'A button that stays pressed when pushed and releases when pushed again', 5, true);
-exports.switch = new Input_Bool('switch', 'Switch', 'A simple switch with two toggle states: on and off', 5, true);
-exports.pot = new Input_Analog('pot', 'Potentiometer', 'A variable resistor with a knob to alter resistance. Can detect several states depending on the position of the knob', 5);
-exports.encoder = new Input_Custom('encoder', 'Encoder', 'A rotary knob or dial that uses two offset boolean states to determine a clockwise or counterclockwise rotation', 5, ['pwr','bool','bool']);
+exports.button = new Input_Bool('button', 'Push Button', 'A button that does not stay pressed when pushed.', 5, false);
+exports.button_t = new Input_Bool('button_t', 'Toggle Button', 'A button that stays physically pressed when pushed and releases when pushed again.', 5, true);
+exports.switch = new Input_Bool('switch', 'Switch', 'A simple switch with two toggle states: on and off.', 5, true);
+exports.switch_ppp = new Input_Custom('switch_ppp', '3 Position Switch', 'A switch with three toggle states: on(1), on(2), and off.', 5, ['bool', 'bool']);
+exports.pot = new Input_Analog('pot', 'Potentiometer', 'A rotary knob or dial that outputs an analog value. Can detect several states depending on the position of the knob.', 5);
+exports.encoder = new Input_Custom('encoder', 'Encoder', 'A rotary knob or dial that uses two offset boolean states to determine a clockwise or counterclockwise rotation. Unlike the potentiometer, this knob has some resistance as it clicks into set positions.', 5, ['pwr','bool','bool']);
+//TODO: This current structure fails when additional input is needed from the user, such as the number of rows and cols of a keypad
