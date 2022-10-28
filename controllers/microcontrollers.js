@@ -15,7 +15,7 @@ class Microcontroller {
     }
 }
 
-exports.aUno = new Microcontroller('aUno', 'Arduino Uno', 14, 6, '13', ['18','19'], ['1','0'], ['3','5','6','9','10','11']);
-exports.aMega = new Microcontroller('aMega', 'Arduino Mega', 54, 16, '13', ['20','21'], ['1','0'], ['0','1','2','3','4','5','6','7','8','9','10','11','12','13']);
+exports.aUno = new Microcontroller('aUno', 'Arduino Uno', 20, 6, '13', ['18','19'], ['1','0'], ['3','5','6','9','10','11']);
+exports.aMega = new Microcontroller('aMega', 'Arduino Mega', 54, 16, '13', ['20','21'], ['1','0'], ['0','1','2','3','4','5','6','7','8','9','10','11','12','13','44','45','46']);
 exports.aMicro = new Microcontroller('aMicro', 'Arduino Micro', 20, 6, '13', ['2','3'], ['1','0'], ['3','5','6','9','10','11']);
 exports.aNano = new Microcontroller('aNano', 'Arduino Nano', 14, 8, '13', ['A4', 'A5'], ['1','0'], ['3','5','6','9','10','11']);

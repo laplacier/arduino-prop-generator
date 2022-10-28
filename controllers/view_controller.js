@@ -1,4 +1,5 @@
 var microcontroller = require('./microcontrollers.js');
+var input = require('./inputs.js');
 
 exports.about = (req, res) => {
     res.render('about');
@@ -19,7 +20,7 @@ exports.io = (req, res, next) => {
             res.redirect('board');
         }
         var selectedBoard = microcontroller[`${req.query.boardId}`];
-        res.render('io', { board: selectedBoard });
+        res.render('io', { board: selectedBoard, input: input });
     } catch(error) {
         next(error);
     }

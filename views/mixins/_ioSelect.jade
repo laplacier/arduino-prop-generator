@@ -1,0 +1,9 @@
+mixin ioSelect(io)
+
+    .io_wrapper
+        each device in io
+            div(id=device.id, class='io_div')
+                .prevent-select
+                    p(id='io_name') #{device.name}
+                    img(id='io_Img', src=`./images/${device.id}.svg`)
+                    p(id='io_description') #{device.description}
