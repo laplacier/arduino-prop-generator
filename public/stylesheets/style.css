@@ -26,13 +26,64 @@ a {
   color: #00B7FF;
 }
 
-.board_div, .io_div {
-  background-color: #ccc;
-  border: 1px solid;
+.io_wrapper {
+  display: flex;
 }
 
-.board_div img {
+#dropbox_io {
+  display: flex;
+  height: fit-content;
+  margin: 0.1em;
+  width: 13em;
+  flex-direction: column;
+  padding: 0.1em;
+  overflow-y: scroll;
+  align-items: flex-start;
+}
+
+.io_left {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.io_left .io_div {
+  height: fit-content;
+}
+
+.io_right {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.io_right .io_div {
+  border: 1px solid black;
+}
+
+#dropbox_selected {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height:18em;
+  border: 1px solid #aaaaaa;
+  padding: 1em;
+}
+
+.board_div, .io_div {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #aaaaaa;
+  padding: 0.25em;
+  margin: 0.25em;
+  text-align: center;
   width: 10em;
+  height: 13.86em;
+  align-items: center;
+}
+
+.board_div img, .io_div img {
+  width: 100%;
 }
 
 .prevent-select {
@@ -40,4 +91,11 @@ a {
   -ms-user-select: none;
   user-select: none;
   pointer-events: none;
+}
+
+#dropbox_selected {
+  width: 50em;
+  height: 50em;
+  background-color: #ccc;
+  border: 1px solid;
 }

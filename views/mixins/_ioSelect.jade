@@ -2,8 +2,8 @@ mixin ioSelect(io)
 
     .io_wrapper
         each device in io
-            div(id=device.id, class='io_div')
+            div(id=device.id, class='io_div', draggable='true', ondragstart='drag(event)', ondragleave='leaveDrop(event)', ondragover='allowDrop(event)', oncontextmenu='return false;')
                 .prevent-select
                     p(id='io_name') #{device.name}
-                    img(id='io_Img', src=`./images/${device.id}.svg`)
+                    img(id='io_Img', class='image_cell', src=`./images/io/${device.id}.jpg`)
                     p(id='io_description') #{device.description}

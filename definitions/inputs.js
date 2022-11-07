@@ -53,7 +53,7 @@ class Input_Custom extends Input {
 }
 
 exports.button = new Input_Bool('button', 'Push Button', 'A button that does not stay pressed when pushed.', 5, false);
-exports.button_t = new Input_Bool('button_t', 'Toggle Button', 'A button that stays physically pressed when pushed and releases when pushed again.', 5, true);
+exports.button_t = new Input_Bool('button_t', 'Toggle Button', 'A button that stays pressed when pushed and releases when pushed again.', 5, true);
 exports.switch = new Input_Bool('switch', 'Switch', 'A simple switch with two toggle states: on and off.', 5, true);
 exports.switch_ppp = new Input_Custom('switch_ppp', '3 Position Switch', 'A switch with three toggle states: on(1), on(2), and off.', 5, ['bool', 'bool']);
 exports.pot = new Input_Analog('pot', 'Potentiometer', 'A rotary knob or dial that outputs an analog value. Can detect several states depending on the position of the knob.', 5);

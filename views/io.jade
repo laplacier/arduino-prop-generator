@@ -4,7 +4,14 @@ include mixins/_ioSelect
 block content
     script(src='/javascripts/io.js')
     p Let's connect some stuff to your #{board.name}
-    p Inputs
-    +ioSelect(input)
-    p Outputs
-    +ioSelect(output)
+    .io_wrapper
+        .io_left
+            p Inputs
+            div(id='dropbox_io', ondragover='allowDrop(event)', ondragleave='leaveDrop(event)')
+                +ioSelect(input)
+            p Outputs
+            div(id='dropbox_io', ondragover='allowDrop(event)', ondragleave='leaveDrop(event)')
+                +ioSelect(output)
+        .io_right
+            p Drag here
+            div(id='dropbox_selected', ondrop='dropzone(event)', ondragover='allowDrop(event)', ondragleave='leaveDrop(event)')
